@@ -1,0 +1,69 @@
+<section class="addDoctor">
+  <h1>Dashboard de administración</h1>
+  <h3>Formulario de registro medicos</h3>
+  <form action="./add-register" method="post">
+    <picture><img src="/images/doctor.png" alt="" /></picture>
+    <span>
+      <label for="name">Numero de documento del médico</label>
+      <input
+        id="document"
+        type="text"
+        placeholder="# Documento"
+        name="document"
+        maxlength="10"
+        required
+      />
+    </span>
+    <span>
+      <label for="lastNameDoc">Apellido del médico </label>
+      <input
+        id="lastNameDoc"
+        type="text"
+        placeholder="Apellidos"
+        name="lastNameDoc"
+        required
+      />
+    </span>
+    <span>
+      <label for="name">Nombre del médico</label>
+      <input
+        id="nameDoc"
+        type="text"
+        placeholder="Nombres"
+        name="nameDoc"
+        required
+      />
+    </span>
+    <span>
+      <label for="roomDoc">Número de consultorio asignado al médico</label>
+      <input
+        id="roomDoc"
+        type="text"
+        placeholder="# de consultorio"
+        name="roomDoc"        
+        required
+      />
+    </span>
+    <span>
+      <label for="mailDoc">Correo electrónico del médico</label>
+      <input
+        id="mailDoc"
+        type="email"
+        placeholder="ejemplo@mail.com"
+        name="mailDoc"
+        required
+      />
+    </span>
+    <span>
+      <label for="specyDoc">Especialidad del médico</label>
+      <select name="specDoc" id="specDoc" required>
+        <option value="">----- Ingresa Especialidad -----</option>
+        {{#each especialities}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+    </span>
+    <input class="submitBtn" type="submit" value="Enviar">  
+  </form>
+  <a href="/doctors">Volver</a>
+</section>

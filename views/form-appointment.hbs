@@ -1,0 +1,30 @@
+<section class="formAppointment">
+  <h1>Dashboard de administración</h1>
+  <h3>{{subTitle}}</h3>
+  <form action="./add-appointment" method="post">
+    <span>
+        <label for="documentPat">Documento del paciente</label>
+        <select name="documentPat" id="documentPat" required>
+            <option value="">Documento del paciente</option>
+            {{#each ./documentsPat}}
+                <option value="{{cedula}}">{{cedula}}</option>
+            {{/each}}
+        </select>
+    </span>
+    <span>        
+        <label for="especDoc">Especialidad Requerida</label>
+        <select name="especDoc" id="especDoc" required>
+            <option value="">Ingrese especialidad</option>
+            {{#each ./especMed}}
+                <option value="{{especialidad}}">{{especialidad}}</option>
+            {{/each}}
+        </select>
+  </span>
+    <span>
+        <label for="dateAp">Fecha de la cita</label>
+        <input type="date" name="dateAp" id="dateAp" required/>
+    </span>
+    <input class="submitBtn" type="submit" value="Enviar">      
+  </form>
+  <a href="/appointment">Volver</a>
+</section>

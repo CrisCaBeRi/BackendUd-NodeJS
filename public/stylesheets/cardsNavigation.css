@@ -1,0 +1,35 @@
+@import url("/stylessheets/style.css");
+.navigationDashboard > ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 2rem 0;
+}
+.cardsNavigation {
+  border-radius: 1rem;
+  box-shadow: 6px 9px 22px 10px rgba(204, 204, 204, 1);
+  width: 16rem;
+  padding: 1.5rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+}
+.cardsNavigation > h2 {
+  background-color: lightblue;
+  width: 125%;
+  text-align: center;
+  margin-top: -1.5rem;
+  padding: 0.3rem 0;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+.cardsNavigation picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cardsNavigation img {
+  width: 40%;
+}

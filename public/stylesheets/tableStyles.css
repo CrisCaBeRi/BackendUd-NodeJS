@@ -1,0 +1,52 @@
+@import url("/stylessheets/style.css");
+table {
+  width: 100%;
+  margin: 2.5rem -2rem;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border: 0.2rem solid #ddd;
+  text-align: center;
+}
+thead {
+  background-color: lightblue;
+  font-family: --;
+}
+table img {
+  width: 1.8rem;
+}
+.optionsCRUD {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.optionsCRUD > a {
+  padding: 0;
+  border: none;
+}
+.optionsCRUD > a:hover {
+  background-color: transparent;
+}
+.optionsCRUD > input {
+  background-color: rgba(0, 128, 0, 0.596);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s all ease-in;
+}
+.optionsCRUD > input:hover {
+  transform: scale(1.1);
+  background-color: green;
+}
+.optionsCRUD img {
+  cursor: pointer;
+  transition: 0.2s all ease-in;
+}
+.optionsCRUD img:hover {
+  transform: scale(1.1);
+}

@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&family=Roboto:wght@300&display=swap");
+@import url("/stylesheets/header.css");
+@import url("/stylesheets/footer.css");
+@import url("/stylesheets/cardsNavigation.css");
+@import url("/stylesheets/tableStyles.css");
+@import url("/stylesheets/formStyles.css");
+@import url("/stylesheets/empty.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --FontStyleA: "Nunito", sans-serif;
+  --FontStyleB: "Roboto", sans-serif;
+}
+html {
+  height: 100%;  
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+h1,
+h2,
+h3, thead{
+  font-family: var(--FontStyleA);
+}
+section > h3, span {
+  color: #808080;
+}
+a,
+p,
+li, tbody, span, input {
+  font-family: var(--FontStyleB);
+  text-decoration: none;
+}
+section {
+  margin: 0 15rem;  
+}
+section > form > button {
+  width: 50%;
+  margin: auto;
+  background-color: #385f92;
+  color: white;
+  transition: 0.2s all ease-in;
+}
+section > form > button:hover {  
+  background-color: blue;
+}
+a, .submitBtn {  
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: 3px solid #385f92; 
+  font-size: 1.1rem;  
+  color: #385f92;
+  font-weight: bold;
+  transition: 0.2s all ease-in;
+}
+a:hover, .submitBtn:hover {
+  color: white;
+  transform: scale(1.1);
+  background-color:#385f92;
+}

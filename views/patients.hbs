@@ -1,0 +1,63 @@
+<section class="patientsTable">
+  <h1>Bienvenido</h1>
+  <h3>Dashboard de administración: {{title}}</h3>
+{{#if show }}  
+<table>
+    <thead>
+      <tr>
+        <th>Cedula</th>
+        <th>Apellido</th>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each patients}}
+        <tr>
+          <form action="/patients/update/{{cedula}}" method="post">
+            <td>
+              {{cedula}}              
+            </td>    
+            <td><input type="text" id="lastnPat" name="lastnPat" value="{{apellido}}" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}} required/></td> 
+            <td><input type="text" id="namePat" name="namePat" value="{{nombre}}" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}} required/></td> 
+            <td><input type="text" id="agePat" name="agePat" maxlength="3" value="{{edad}}" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}}  required/></td> 
+            <td><input type="text" id="telPat" name="telPat" maxlength="8" value="{{telefono}}" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}} required/></td>
+            <td>
+                {{#if ../state}}
+                <span class="optionsCRUD">
+                    <a href="/patients/delete/{{cedula}}">
+                        <picture>
+                        <img src="/images/borrar.png" alt="Imagen borrar" />
+                        </picture>
+                    </a>
+                    <a href="/patients/modify/{{@key}}">
+                        <picture>
+                        <img src="/images/editar.png" alt="Imagen editar" />
+                        </picture>
+                    </a>
+                </span>                    
+                    {{else}}
+                    <span class="optionsCRUD" >                        
+                        <input type="submit" value="Enviar" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}}>
+                        <a href="/patients">
+                            <picture>
+                                <img src="/images/atras.png" alt="">
+                            </picture>
+                        </a>
+                    </span>                    
+                    {{/if}}                               
+            </td>                 
+          </form>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>  
+  {{else}}
+    {{>empty}} 
+{{/if}}
+  <a href="/">Regresar</a>
+  {{!-- Formulario --}}
+  <a href="patients/form-patient" style="display: {{display}};">Agregar Paciente</a>
+</section>

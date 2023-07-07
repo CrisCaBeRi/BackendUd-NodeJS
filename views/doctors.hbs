@@ -1,0 +1,98 @@
+<section class="doctorsTable">
+  <h1>Bienvenido</h1>
+  <h3>Dashboard de administración: {{title}}</h3>
+{{#if show }} 
+<table>
+    <thead>
+      <tr>
+        <th>Cedula</th>
+        <th>Apellido</th>
+        <th>Nombre</th>
+        <th>Especialidad</th>
+        <th>Consultorio</th>
+        <th>Correo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each doctors}}
+        <tr>
+          <form action="/doctors/update/{{cedula}}" method="post">            
+          {{!-- No se modifica el pk de medico --}}
+            <td>
+              {{cedula}}              
+            </td>
+            <td>
+              <input
+                type="text"
+                id="lNameDoc"
+                name="lNameDoc"
+                value="{{apellido}}" {{#ifCond @key '!=' ../keyDoc}}{{../option}}{{/ifCond}} required
+              />
+            </td>
+            <td>              
+              <input
+                type="text"
+                id="nameDoc"
+                name="nameDoc"
+                value="{{nombre}}"{{#ifCond @key '!=' ../keyDoc}}{{../option}}{{/ifCond}} required
+              />
+            </td>
+            <td>  
+              {{especialidad}}                        
+               <select name="specDoc" id="specDoc" style="display: none;">               
+                <option value="{{especialidad}}" required> {{especialidad}}</option> 
+              </select>
+            </td>
+            <td>
+              <input
+                type="text"
+                id="roomDoc"
+                name="roomDoc"
+                value="{{consultorio}}" {{#ifCond @key '!=' ../keyDoc}}{{../option}}{{/ifCond}} required
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                id="mailDoc"
+                name="mailDoc"
+                value="{{correo}}" {{#ifCond @key '!=' ../keyDoc}}{{../option}}{{/ifCond}} required
+              />
+            </td>
+            <td>
+              {{#if ../state}}
+              <span class="optionsCRUD">
+                <a href="/doctors/delete/{{cedula}}">
+                  <picture>
+                    <img src="/images/borrar.png" alt="Imagen borrar" />
+                  </picture>
+                </a>
+                <a href="/doctors/modify/{{@key}}">
+                  <picture>
+                    <img src="/images/editar.png" alt="Imagen editar" />
+                  </picture>
+                </a>
+              </span>              
+              {{else}}
+              <span class="optionsCRUD">
+                <input type="submit" value="Enviar" {{#ifCond @key '!=' ../keyDoc}}{{../option}}{{/ifCond}}>
+                <a href="/doctors">
+                  <picture>
+                    <img src="/images/atras.png" alt="">
+                  </picture>                    
+                </a>
+              </span>              
+              {{/if}}           
+            </td>
+          </form>
+        </tr>
+      {{/each}}      
+    </tbody>
+  </table>
+{{else}}
+  {{>empty}}
+{{/if}}   
+  <a href="/">Regresar</a>
+  <a href="doctors/form-doctor" style="display: {{display}};" >Agregar Doctor</a>  
+</section>

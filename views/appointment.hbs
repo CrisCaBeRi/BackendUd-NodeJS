@@ -1,0 +1,49 @@
+<section class="appointmenTable">
+  <h1>Bienvenido</h1>
+  <h3>Dashboard de administración: {{subtitle}}</h3>
+  {{#if show1 }}
+  <table>
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Medico Asignado</th>
+        <th>Documento paciente</th>
+        <th>Paciente</th>
+        <th>Especialidad</th>
+        <th>Consultorio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each appointments}}
+        <tr>
+          <form action="/appointment/update/{{id}}" method="post">
+            <td>
+              {{ formatDate fecha}}             
+            </td>
+            <td>{{apellidoDoc}} {{nombreDoc}}</td>
+            <td>{{id_paciente}}</td>
+            <td>{{apellido}} {{nombre}}</td>
+            <td>{{especialidad}}</td>
+            <td>{{consultorio}}</td>
+            <td>
+              <span class="optionsCRUD">
+                <a href="/appointment/delete/{{id}}">
+                <picture>
+                  <img src="/images/borrar.png" alt="Imagen borrar" />
+                </picture>
+              </a>
+              </span>            
+            </td>
+          </form>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+    {{>empty}}    
+  {{/if}}  
+  <a href="/">Regresar</a>
+  {{!-- ENVIO AL FORMULARIO --}} 
+  <a href="appointment/form-appointment" style="display: {{display}};">Agendar cita</a>
+</section>

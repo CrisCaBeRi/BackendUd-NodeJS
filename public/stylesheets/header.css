@@ -1,0 +1,15 @@
+@import url("/stylessheets/style.css");
+header {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.322);
+  margin-bottom: 1.5rem;
+}
+header > picture > img {
+  width: 20rem;
+}
+header h1 {
+  color: grey;
+}

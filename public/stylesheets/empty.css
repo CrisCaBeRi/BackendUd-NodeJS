@@ -1,0 +1,15 @@
+@import url("/stylesheets/style.css");
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.empty img {
+  width: 30rem;
+}
+.empty h2 {
+  color: grey;
+  font-size: 2rem;
+}
