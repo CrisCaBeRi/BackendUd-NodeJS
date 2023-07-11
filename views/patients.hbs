@@ -22,7 +22,7 @@
             </td>    
             <td><input type="text" id="lastnPat" name="lastnPat" value="{{apellido}}" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}} required/></td> 
             <td><input type="text" id="namePat" name="namePat" value="{{nombre}}" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}} required/></td> 
-            <td><input type="text" id="agePat" name="agePat" maxlength="3" value="{{edad}}" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}}  required/></td> 
+            <td><input type="text" id="agePat" name="agePat" maxlength="3" value="{{edad}}" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}} pattern="[0-9]+" required/></td> 
             <td><input type="text" id="telPat" name="telPat" maxlength="8" value="{{telefono}}" {{#ifCond @key '!=' ../keyPat}}{{../option}}{{/ifCond}} required/></td>
             <td>
                 {{#if ../state}}

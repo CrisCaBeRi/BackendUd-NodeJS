@@ -5,25 +5,60 @@
     <picture><img src="/images/paciente.png" alt="" /></picture>
     <span>
       <label for="">Documento de identidad</label>
-      <input type="text" id="idPat" name="idPat" placeholder="Ingresa documento" maxlength="10" required />
+      <input
+        type="text"
+        id="idPat"
+        name="idPat"
+        placeholder="Ingresa documento"
+        maxlength="10"
+        pattern="[0-9]+"
+        required
+      />
     </span>
     <span>
       <label for="">Nombre del paciente</label>
-      <input type="text" id="namePat" name="namePat" placeholder="Ingresa nombre" required />
+      <input
+        type="text"
+        id="namePat"
+        name="namePat"
+        placeholder="Ingresa nombre"
+        required
+      />
     </span>
     <span>
       <label for="">Apellido del paciente</label>
-      <input type="text" id="lastnPat" name="lastnPat" placeholder="Ingresa el apellido" required />
+      <input
+        type="text"
+        id="lastnPat"
+        name="lastnPat"
+        placeholder="Ingresa el apellido"
+        required
+      />
     </span>
     <span>
       <label for="">Edad del paciente</label>
-      <input type="text" id="agePat" name="agePat" placeholder="Ingresa la edad" maxlength="3" required />
+      <input
+        type="text"
+        id="agePat"
+        name="agePat"
+        placeholder="Ingresa la edad"
+        maxlength="3"
+        pattern="[0-9]+"
+        required
+      />
     </span>
     <span>
       <label for="">Teléfono del paciente</label>
-      <input type="tel" id="telPat" name="telPat" placeholder="Ingresa teléfono" maxlength="8" required />
-    </span>  
-    <input class="submitBtn" type="submit" value="Enviar">    
+      <input
+        type="tel"
+        id="telPat"
+        name="telPat"
+        placeholder="Ingresa teléfono"
+        maxlength="8"
+        required
+      />
+    </span>
+    <input class="submitBtn" type="submit" value="Enviar" />
   </form>
   <a href="/patients">Volver</a>
 </section>
